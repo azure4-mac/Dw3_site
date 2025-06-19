@@ -202,29 +202,71 @@ Widget _buildPartnersSection() {
 Widget _buildObjectivesSection() {
   return Padding(
     padding: const EdgeInsets.all(16.0),
-    child: Column(
+    child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Qual o nosso objetivo?',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+        // Texto lado esquerdo
+        Expanded(
+          flex: 2,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Qual o nosso objetivo?',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 8),
+              Text(
+                '1 - Otimizar a gestão de negócios de delivery',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+              Text(
+                'Ajudamos empresas a organizar pedidos, finanças e logística, tornando a gestão mais simples e eficiente.',
+                style: TextStyle(color: Colors.black54),
+              ),
+              SizedBox(height: 8),
+              Text(
+                '2 - Aumentar a eficiência e os lucros dos clientes',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+              Text(
+                'Oferecemos soluções que reduzem custos, otimizam processos e aumentam a produtividade e os lucros.',
+                style: TextStyle(color: Colors.black54),
+              ),
+              SizedBox(height: 8),
+              Text(
+                '3 - Oferecer soluções práticas para crescimento sustentável',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+              Text(
+                'Fornecemos ferramentas práticas para que os negócios cresçam de forma estruturada, rentável e duradoura.',
+                style: TextStyle(color: Colors.black54),
+              ),
+            ],
           ),
         ),
-        const SizedBox(height: 8),
-        const Text(
-          '1 - Otimizar a gestão de negócios de delivery',
-          style: TextStyle(color: Colors.black87),
-        ),
-        const Text(
-          '2 - Aumentar a eficiência e os lucros dos clientes',
-          style: TextStyle(color: Colors.black87),
-        ),
-        const Text(
-          '3 - Oferecer soluções práticas para crescimento sustentável',
-          style: TextStyle(color: Colors.black87),
+        const SizedBox(width: 16),
+        Expanded(
+          flex: 3,
+          child: Image.asset(
+            'assets/img/objetivo.png',
+            fit: BoxFit.cover,
+            width: 150,
+            height: 300,
+          ),
         ),
       ],
     ),
@@ -271,7 +313,7 @@ Widget _buildFormBox(String title) {
 
 Widget _buildReviewsSection() {
   return Container(
-    color: Color.fromRGBO(0, 74, 173, 1),
+    color: const Color.fromRGBO(0, 74, 173, 1),
     padding: const EdgeInsets.all(16.0),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,14 +327,67 @@ Widget _buildReviewsSection() {
           ),
         ),
         const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: List.generate(
-            3,
-            (index) => Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Review ${index + 1}'),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: List.generate(
+              3,
+              (index) => Container(
+                width: 1000,
+                margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '"Um feedback incrível ${index + 1}"',
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        const CircleAvatar(
+                          radius: 12,
+                          backgroundColor: Colors.grey,
+                          child: Icon(
+                            Icons.person,
+                            size: 14,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(width: 6),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              'Nome',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              'Descrição',
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Colors.black54,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
