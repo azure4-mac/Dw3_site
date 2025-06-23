@@ -185,40 +185,43 @@ class _HomePageState extends State<HomePage> {
   Widget _buildWave() {
     return ClipPath(
       clipper: WaveClipper(),
-      child: Container(height: 100, color: const Color.fromRGBO(0, 74, 173, 1)),
+      child: Container(height: 120, color: const Color.fromRGBO(0, 74, 173, 1)),
     );
   }
 
   Widget _buildPartnersSection() {
-    return Container(
-      key: productsKey,
-      color: const Color.fromRGBO(0, 74, 173, 1),
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Parcerias fechadas com:',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(height: 16),
-          GridView.count(
-            crossAxisCount: 3,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            children: List.generate(
-              6,
-              (index) => Card(
+    return Transform.translate(
+      offset: const Offset(0, -20),
+      child: Container(
+        key: productsKey,
+        color: const Color.fromRGBO(0, 74, 173, 1),
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Parcerias fechadas com:',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
-                child: Center(child: Text('Parceiro ${index + 1}')),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 16),
+            GridView.count(
+              crossAxisCount: 3,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              children: List.generate(
+                6,
+                (index) => Card(
+                  color: Colors.white,
+                  child: Center(child: Text('Parceiro ${index + 1}')),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
