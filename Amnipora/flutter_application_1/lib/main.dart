@@ -338,7 +338,7 @@ Widget _buildReviewsSection() {
             children: List.generate(
               3,
               (index) => Container(
-                width: 1000,
+                width: 300,
                 margin: const EdgeInsets.symmetric(horizontal: 8.0),
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
