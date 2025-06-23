@@ -61,11 +61,7 @@ class HomePage extends StatelessWidget {
             children: [
               Transform.rotate(
                 angle: 3.14,
-                child: Image.asset(
-                  'assets/img/logo.png',
-                  width: 150,
-                  height: 150,
-                ),
+                child: Image.asset('img/logo.png', width: 400, height: 400),
               ),
               const SizedBox(width: 8),
             ],
@@ -76,21 +72,30 @@ class HomePage extends StatelessWidget {
                 onPressed: () {},
                 child: const Text(
                   'Cadastre-se',
-                  style: TextStyle(color: Color.fromRGBO(0, 74, 173, 1)),
+                  style: TextStyle(
+                    color: Color.fromRGBO(0, 74, 173, 1),
+                    fontSize: 20,
+                  ),
                 ),
               ),
               TextButton(
                 onPressed: () {},
                 child: const Text(
                   'Produtos',
-                  style: TextStyle(color: Color.fromRGBO(0, 74, 173, 1)),
+                  style: TextStyle(
+                    color: Color.fromRGBO(0, 74, 173, 1),
+                    fontSize: 20,
+                  ),
                 ),
               ),
               TextButton(
                 onPressed: () {},
                 child: const Text(
                   'Sobre Nós',
-                  style: TextStyle(color: Color.fromRGBO(0, 74, 173, 1)),
+                  style: TextStyle(
+                    color: Color.fromRGBO(0, 74, 173, 1),
+                    fontSize: 20,
+                  ),
                 ),
               ),
             ],
@@ -147,7 +152,7 @@ Widget _buildHeroSection() {
           child: Container(
             padding: const EdgeInsets.all(8),
             child: Image.asset(
-              'assets/img/somos.png',
+              'img/somos.png',
               fit: BoxFit.contain,
               width: 400,
               height: 400,
@@ -262,7 +267,7 @@ Widget _buildObjectivesSection() {
         Expanded(
           flex: 3,
           child: Image.asset(
-            'assets/img/objetivo.png',
+            'img/objetivo.png',
             fit: BoxFit.cover,
             width: 150,
             height: 300,
@@ -313,7 +318,7 @@ Widget _buildFormBox(String title) {
 
 Widget _buildReviewsSection() {
   return Container(
-    color: const Color.fromRGBO(0, 74, 173, 1),
+    color: Color.fromRGBO(0, 74, 173, 1),
     padding: const EdgeInsets.all(16.0),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -333,7 +338,7 @@ Widget _buildReviewsSection() {
             children: List.generate(
               3,
               (index) => Container(
-                width: 1000 / 1,
+                width: 1000,
                 margin: const EdgeInsets.symmetric(horizontal: 8.0),
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
